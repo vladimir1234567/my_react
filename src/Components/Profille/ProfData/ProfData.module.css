@@ -1,0 +1,10 @@
+.userData {
+    display: flex;
+}
+
+.userData img {
+    width: 10%;
+}
+.nameData {
+    margin-left: 10px;
+}

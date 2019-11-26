@@ -1,0 +1,18 @@
+.navbar {
+    grid-area: n;
+    background: lightgreen;
+    min-height: 100vh;
+}
+.item {
+    margin: 10px;
+}
+
+.item a {
+    color: white;
+    text-decoration: none;
+}
+
+.item.active a {
+    color: gold;
+    
+}
