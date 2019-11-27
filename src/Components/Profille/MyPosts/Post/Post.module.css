@@ -1,0 +1,14 @@
+.post {
+    margin: 15px;
+}
+
+.contentmes {
+    display: flex;
+}
+
+.contentmes img {
+    width: 8%;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
