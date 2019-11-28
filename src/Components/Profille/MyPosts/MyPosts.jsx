@@ -3,15 +3,9 @@ import s from './MyPosts.module.css';
 import Post from './Post/Post';
 
 
-const MyPosts = () => {
+const MyPosts = (props) => {
 
-    let PostData = [
-        {message: 'hi!', likesCount: 4},
-        {message: 'hello!', likesCount: 3},
-        {message: 'O`key!!', likesCount: 5}
-    ];
-
-    let MessageElements = PostData.map(mesitem => 
+    let MessageElements = props.PostData.map(mesitem => 
             <Post message={mesitem.message} likesCount={mesitem.likesCount} /> );
 
     return (
@@ -23,12 +17,6 @@ const MyPosts = () => {
             <div>
                 <button>Add post</button>
             </div>
-            {/* <Post message={PostData[0].message} 
-                  likesCount={PostData[0].likesCount} />
-             <Post message={PostData[1].message} 
-                  likesCount={PostData[1].likesCount} />
-             <Post message={PostData[2].message} 
-                  likesCount={PostData[2].likesCount} /> */}
                   {MessageElements}
         </div>
     );

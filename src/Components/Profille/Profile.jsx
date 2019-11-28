@@ -3,11 +3,12 @@ import s from './Profile.module.css';
 import ProfData from './ProfData/ProfData';
 import MyPosts from './MyPosts/MyPosts';
 
-const Profile = () => {
+const Profile = (props) => {
+    console.log(props);
     return (
         <div className={s.profile}>
            <ProfData />
-           <MyPosts />
+           <MyPosts PostData={props.PostData} />
         </div>
     );
 }
