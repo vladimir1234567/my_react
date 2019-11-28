@@ -18,6 +18,8 @@ let state = {
         {message: 'Let`s go', id: 4},
         {message: 'Yo-ho!', id: 5}
     ]
+
+
 }
 
 export default state;
