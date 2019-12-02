@@ -24,7 +24,6 @@ const Dialogs = (props) => {
     let addMessage = () => {
         let text = newMessEl.current.value;
         alert( text );
-        // newMessEl.value = '';
     }
     
     let DialogsItems = props.DialogsData.map( dialitem => 

@@ -4,6 +4,7 @@ import Post from './Post/Post';
 
 
 const MyPosts = (props) => {
+    debugger;
 
     let MessageElements = props.PostData.map(mesitem => 
             <Post message={mesitem.message} likesCount={mesitem.likesCount} /> );
@@ -12,7 +13,8 @@ const MyPosts = (props) => {
 
     let addPost = () => {
         let text = newPostEl.current.value;
-        alert(text);
+        props.addPost(text);
+        newPostEl.current.value = '';
     }
 
     return (
