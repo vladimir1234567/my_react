@@ -24,7 +24,8 @@ let state = {
             {message: 'o`key!', id: 3},
             {message: 'Let`s go', id: 4},
             {message: 'Yo-ho!', id: 5}
-        ]
+        ],
+        newmes: 'хорошо!'
     }
 }
 
@@ -43,5 +44,20 @@ export let addPost = () => {
 
 export let updatePostData = (newText) => {
     state.ProfilePage.newPostData = newText;
+    renderEntireTree(state);
+}
+
+export let addMessage = () => {
+    let NewMessage = {
+        id: 6,
+        message: state.dialogsPage.newmes
+    }
+    state.dialogsPage.MessagesData.push(NewMessage);
+    state.dialogsPage.newmes = '';
+    renderEntireTree(state);
+}
+
+export let updateMessage = (newText) => {
+    state.dialogsPage.newmes = newText;
     renderEntireTree(state);
 }
