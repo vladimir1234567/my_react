@@ -1,4 +1,6 @@
-import {renderEntireTree} from '../render';
+let renderEntireTree = () => {
+    console.log('state changed');
+}
 
 let state = {
     ProfilePage: {
@@ -28,8 +30,6 @@ let state = {
         newmes: 'хорошо!'
     }
 }
-
-export default state;
 
 export let addPost = () => {
     let newPost = {
@@ -61,3 +61,11 @@ export let updateMessage = (newText) => {
     state.dialogsPage.newmes = newText;
     renderEntireTree(state);
 }
+
+export const subscribe = (observer) => {// pattern for avoid cyclic dependence
+
+    renderEntireTree = observer;//renderEntireTree - global 
+}
+
+export default state;
+
