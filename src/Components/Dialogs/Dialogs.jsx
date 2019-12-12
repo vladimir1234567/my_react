@@ -25,12 +25,12 @@ const Dialogs = (props) => {
 
     let addMessage = () => {
         // let text = newMessEl.current.value;
-        props.addMessage();
+        props.dispatch({type: 'ADD-MESSAGE'});
     }
 
     let updateMessage = () => {
         let text = newMessEl.current.value;
-        props.updateMessage(text);
+        props.dispatch({type: 'UPDATE-MESSAGE', newMessText: text});
     }
     
     let DialogsItems = props.DialogsData.map( dialitem => 

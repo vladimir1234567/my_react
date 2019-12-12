@@ -13,13 +13,13 @@ const MyPosts = (props) => {
 
     let addPost = () => {
         // let text = newPostEl.current.value;
-        props.addPost();
+        props.dispatch({type: 'ADD-POST'});
         // newPostEl.current.value = '';
     }
 
     let updatePostData = () => {
         let text = newPostEl.current.value;
-        props.updatePostData(text);
+        props.dispatch({type: 'UPDATE-POST-DATA', newText: text});
     }
 
     return (

@@ -9,9 +9,8 @@ const Profile = (props) => {
         <div className={s.profile}>
            <ProfData />
            <MyPosts PostData={props.PostData} 
-                    addPost={props.addPost} 
-                    newPostData={props.newPostData} 
-                    updatePostData={props.updatePostData} />
+                    dispatch={props.dispatch} 
+                    newPostData={props.newPostData}  />
         </div>
     );
 }
