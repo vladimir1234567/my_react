@@ -4,6 +4,7 @@ import {NavLink} from 'react-router-dom';
 import {addMessageActionCreator, updateMessageActionCreator} from '../../Redux/State';
 
 const DialogItem = (props) => {
+    debugger;
     
     let path = '/dialogs/' + props.id;
     return (
@@ -21,16 +22,19 @@ const Message = (props) => {
 
 const Dialogs = (props) => {
     
+    
 
-    let newMessEl = React.createRef();
+    // let newMessEl = React.createRef();
+    let newmes = props.newmes;
+    
 
     let addMessage = () => {
         // let text = newMessEl.current.value;
         props.dispatch(addMessageActionCreator());
     }
 
-    let updateMessage = () => {
-        let text = newMessEl.current.value;
+    let updateMessage = (e) => {
+        let text = e.target.value;
         props.dispatch(updateMessageActionCreator(text));
     }
     
@@ -49,9 +53,10 @@ const Dialogs = (props) => {
                 {MessageItem}
             </div>
             <div>
-                <textarea ref={ newMessEl } 
-                value={props.newmes} 
-                onChange={updateMessage} />
+                <textarea  
+                value={newmes} 
+                onChange={updateMessage} 
+                placeholder='Enter your message' />
             </div>
             <div><button onClick={ addMessage } >addMessage</button></div>
         </div>

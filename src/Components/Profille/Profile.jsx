@@ -4,7 +4,7 @@ import ProfData from './ProfData/ProfData';
 import MyPosts from './MyPosts/MyPosts';
 
 const Profile = (props) => {
-    console.log(props);
+    
     return (
         <div className={s.profile}>
            <ProfData />

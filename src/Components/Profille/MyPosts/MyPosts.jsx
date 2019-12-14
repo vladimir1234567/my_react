@@ -7,7 +7,7 @@ import {addPostActionCreator, updatePostDataActionCreator} from '../../../Redux/
 
 
 const MyPosts = (props) => {
-    debugger;
+    
 
     let MessageElements = props.PostData.map(mesitem => 
             <Post message={mesitem.message} likesCount={mesitem.likesCount} /> );

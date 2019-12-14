@@ -2,6 +2,8 @@ const ADD_POST = 'ADD-POST';
 const UPDATE_POST_DATA = 'UPDATE-POST-DATA';
 const ADD_MESSAGE = 'ADD-MESSAGE';
 const UPDATE_MESSAGE = 'UPDATE-MESSAGE';
+const ADD_COMP = 'ADD-COMP';
+const UPDATE_MUSIKLIST = 'UPDATE-MUSIKLIST';
 
 
 let store = {
@@ -31,6 +33,14 @@ let store = {
                 {message: 'Yo-ho!', id: 5}
             ],
             newmes: 'хорошо!'
+        },
+
+        MusikPage: {
+            MusikList: [
+                {composition: 'saber dance'},
+                {composition: 'turkish march'}
+            ],
+            newCompName: 'seasons'
         }
     },
 
@@ -48,7 +58,7 @@ let store = {
     },
 
     dispatch(action) {
-        if(action.type === 'ADD-POST') {
+        if(action.type === ADD_POST) {
             let newPost = {
                 id: 5,
                 message: this._state.ProfilePage.newPostData,
@@ -57,10 +67,11 @@ let store = {
             this._state.ProfilePage.PostData.push(newPost);
             this._state.ProfilePage.newPostData = '';
             this._callSubscriber(this._state);
-        } else if (action.type === 'UPDATE-POST-DATA') {
+        } else if (action.type === UPDATE_POST_DATA) {
             this._state.ProfilePage.newPostData = action.newText;
             this._callSubscriber(this._state);
-        } else if (action.type === 'ADD-MESSAGE') {
+
+        } else if (action.type === ADD_MESSAGE) {
             let NewMessage = {
                 id: 6,
                 message: this._state.dialogsPage.newmes
@@ -68,10 +79,23 @@ let store = {
             this._state.dialogsPage.MessagesData.push(NewMessage);
             this._state.dialogsPage.newmes = '';
             this._callSubscriber(this._state);
-        } else if (action.type === 'UPDATE-MESSAGE') {
+        } else if (action.type === UPDATE_MESSAGE) {
             this._state.dialogsPage.newmes = action.newMessText;
             this._callSubscriber(this._state);
-        } 
+        }
+
+        else if(action.type === ADD_COMP) {
+            let newComposName = {
+                composition: this._state.MusikPage.newCompName
+            }
+            this._state.MusikPage.MusikList.push(newComposName);
+            this._state.MusikPage.newCompName = '';
+            this._callSubscriber(this._state);
+        }
+        else if (action.type = UPDATE_MUSIKLIST) {
+            this._state.MusikPage.newCompName = action.newCompText;
+            this._callSubscriber(this._state);
+        }
     }
  }
 
@@ -82,6 +106,11 @@ export const updatePostDataActionCreator = (text) => ({type: UPDATE_POST_DATA, n
 export const addMessageActionCreator = () => ({type: ADD_MESSAGE});
 
 export const updateMessageActionCreator = (text) => ({type: UPDATE_MESSAGE, newMessText: text});
+
+export const addMusikActionCreator = () => ({type: ADD_COMP});
+
+export const updateMusikActionCreator = (text) => ({type: UPDATE_MUSIKLIST, newCompText: text});
+
 
 export default store;
 window.store = store;
