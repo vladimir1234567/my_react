@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './Dialogs.module.css';
 import {NavLink} from 'react-router-dom';
-import {addMessageActionCreator, updateMessageActionCreator} from '../../Redux/State';
+import {addMessageActionCreator, updateMessageActionCreator} from '../../Redux/dialogsReducer';
 
 const DialogItem = (props) => {
     debugger;

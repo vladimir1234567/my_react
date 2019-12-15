@@ -1,5 +1,5 @@
 import React from 'react';
-import {addMusikActionCreator, updateMusikActionCreator} from '../../Redux/State';
+import {addMusikActionCreator, updateMusikActionCreator} from '../../Redux/musikReducer';
 
 const MusikItem = (props) => {
     return (
