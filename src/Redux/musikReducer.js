@@ -1,8 +1,15 @@
 const ADD_COMP = 'ADD-COMP';
 const UPDATE_MUSIKLIST = 'UPDATE-MUSIKLIST';
 
+let initialState = {
+    MusikList: [
+        {composition: 'saber dance'},
+        {composition: 'turkish march'}
+    ],
+    newCompName: 'seasons'
+};
 
-const musikReducer = (state, action) => {
+const musikReducer = (state = initialState, action) => {
 
     switch(action.type) {
         case ADD_COMP:

@@ -10,6 +10,7 @@ import Musik from './Components/Musik/musik';
 
 
 const App = (props) => {
+  debugger;
   return (
     <BrowserRouter>
     <div className={'app-wrapper'}>
